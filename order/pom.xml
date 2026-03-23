@@ -88,6 +88,7 @@
 			<artifactId>testcontainers-mysql</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- Source: https://mvnrepository.com/artifact/org.flywaydb/flyway-mysql -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -95,6 +96,7 @@
 			<version>12.1.1</version>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Source: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -102,7 +104,22 @@
 			<version>5.0.1</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<!--		springdoc library-->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
