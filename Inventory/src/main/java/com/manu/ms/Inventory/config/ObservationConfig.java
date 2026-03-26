@@ -1,4 +1,4 @@
-package com.manu.ms.inventory.config;
+package com.manu.ms.Inventory.config;
 
 import io.micrometer.observation.ObservationRegistry;
 import io.micrometer.observation.aop.ObservedAspect;
