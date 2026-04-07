@@ -1,1 +1,0 @@
--- This migration is no longer needed as line items are now embedded in t_orders table

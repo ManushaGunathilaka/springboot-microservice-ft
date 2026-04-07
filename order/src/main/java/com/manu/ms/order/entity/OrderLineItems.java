@@ -1,4 +1,4 @@
-package com.manu.ms.order.model;
+package com.manu.ms.order.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

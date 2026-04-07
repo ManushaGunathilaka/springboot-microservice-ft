@@ -3,7 +3,8 @@ package com.manu.ms.order.service;
 import com.manu.ms.order.client.InventoryClient;
 import com.manu.ms.order.dto.OrderRequest;
 import com.manu.ms.order.event.OrderPlacedEvent;
-import com.manu.ms.order.model.Order;
+import com.manu.ms.order.entity.Order;
+import com.manu.ms.order.exception.OutOfStockException;
 import com.manu.ms.order.repositorty.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Service
 @RequiredArgsConstructor
@@ -56,9 +59,14 @@ public class OrderService {
             }
 
             return "Order ID: " + savedOrder.getId() + ", Order Number: " + savedOrder.getOrderNumber();
-        }else {
-            throw new RuntimeException("Product with SKU code " + orderRequest.getSkuCode() + " is out of stock.");
+        } else {
+            throw new OutOfStockException(
+                    "Product with SKU code " + orderRequest.getSkuCode() + " is out of stock.");
         }
 
+    }
+
+    public Page<Order> getOrders(Pageable pageable) {
+        return orderRepository.findAll(pageable);
     }
 }
