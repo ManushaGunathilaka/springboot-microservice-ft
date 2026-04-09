@@ -24,13 +24,6 @@ public class OrderController {
 
     private final OrderService orderService;
 
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public CompletableFuture<String> placeOrder(@RequestBody OrderRequest orderRequest) {
-//        log.info("Placing Order");
-//        return CompletableFuture.supplyAsync(() -> orderService.placeOrder(orderRequest));
-//    }
-
     @PostMapping
     public ResponseEntity<SuccessMessage> placeOrder(@RequestBody OrderRequest orderRequest) {
         log.info("Placing Order");
